@@ -6,7 +6,7 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract Villa is ERC20 {
 
     address companyAddr;
-    uint tSupply = 2264000000000000000000000;
+    uint tSupply = 2264000;
     struct LV12650MetaData {
         string totalFlatSpace;
         uint floorNumber;
@@ -17,8 +17,8 @@ contract Villa is ERC20 {
 
     LV12650MetaData public metaData = LV12650MetaData("540 m2",3 ,8 ,"Yes","Bank");
 
-    mapping(address => uint) assetOwnershipStackPercentage;
-    mapping(address => mapping(address => uint)) secondaryMarketSales;
+    mapping(address => uint) public assetOwnershipStackPercentage;
+    mapping(address => mapping(address => uint)) public secondaryMarketSales;
 
     constructor() ERC20 ("luxuryVilla 12650", "LV12650") {
         _mint(msg.sender, tSupply);
