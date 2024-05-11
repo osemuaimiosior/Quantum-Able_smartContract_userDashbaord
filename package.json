@@ -1,5 +1,5 @@
 {
-  "name": "Villa FrontEnd",
+  "name": "villa_smartContract_userDashbaord",
   "version": "2.0.0",
   "description": "Frontend",
   "main": "./dist/js/theme.js",
@@ -21,12 +21,13 @@
   "license": "MIT",
   "dependencies": {
     "@claviska/jquery-minicolors": "^2.3.2",
+    "@openzeppelin/contracts": "^5.0.2",
     "amcharts3": "^3.21.14",
     "ammap3": "^3.21.14",
     "bootstrap": "^4.2.1",
     "bootstrap-slider": "^10.3.2",
     "bootstrap-tagsinput": "^0.7.1",
-    "c3": "^0.6.8",
+    "c3": "^0.4.24",
     "chartist": "^0.11.0",
     "datatables.net": "^1.10.19",
     "datatables.net-bs4": "^1.10.19",
