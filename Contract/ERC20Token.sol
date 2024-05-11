@@ -7,6 +7,7 @@ contract Villa is ERC20 {
 
     address companyAddr;
     uint tSupply = 2264000;
+
     struct LV12650MetaData {
         string totalFlatSpace;
         uint floorNumber;
@@ -26,8 +27,13 @@ contract Villa is ERC20 {
         companyAddr = msg.sender;
     }
 
+    event transferEvent (address to, uint value);
+    event thirdPartyTransferEvent (address to, uint value);
+    event burnTokenEvent(address account, uint value);
+
+
     function _mintMinerReward() public {
-        _mint(block.coinbase, 1000);
+        _mint(block.coinbase, 10);
     }
 
     function _update(address from, address to, uint256 value) internal virtual override {
@@ -43,6 +49,7 @@ contract Villa is ERC20 {
         
         assetOwnershipStackPercentage[_msgSender()] = value/tSupply;
         _transfer(companyAddr, to, value);
+        emit transferEvent (to, value);
         return true;
     }
 
@@ -52,7 +59,16 @@ contract Villa is ERC20 {
         
         address owner = _msgSender();
         _transfer(owner, to, value);
+        emit thirdPartyTransferEvent (to, value);
         return true;
-   
+    }
+
+    // Used to terminate an asset (An ERC20 Token) and remove it off the market for investment
+    
+    function burn(address account, uint value) public {
+        require(msg.sender == companyAddr, "Only an authorized company account can burn a token");
+        
+        _burn(account, value);
+        emit burnTokenEvent(account, value);
     }
 }
