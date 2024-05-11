@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract Villa is ERC20 {
+contract LV12650Token is ERC20 {
 
     address companyAddr;
     uint tSupply = 2264000;
@@ -64,7 +64,6 @@ contract Villa is ERC20 {
     }
 
     // Used to terminate an asset (An ERC20 Token) and remove it off the market for investment
-    
     function burn(address account, uint value) public {
         require(msg.sender == companyAddr, "Only an authorized company account can burn a token");
         
