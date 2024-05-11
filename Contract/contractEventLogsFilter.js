@@ -6,7 +6,7 @@ const filter = web3.eth.filter({
     fromBlock: 0,
     toBlock: 'latest',
     address: contractAddress,
-    topics: [web3.sha3('transferEvent (address to, uint value)')]
+   topics: [web3.sha3(/*the event you want to filter*/)]
   })
   
   filter.watch((error, result) => {
