@@ -11,4 +11,8 @@ app.get('^/$|/index(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 })
 
+app.get('/login1(.html)?', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login1.html'));
+})
+
 app.listen(PORT, () => {console.log(`Server is running on port ${PORT}`)});
