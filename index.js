@@ -5,7 +5,11 @@ const path = require('path');
 
 const PORT = process.env.PORT || 1200;
 
+// built-in middleware to read json file into the server json
+app.use(express.json());
+
 app.use(express.static(path.join(__dirname, '/public')));
+app.use('/registration', require('./routes/api/register'))
 
 app.get('^/$|/index(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
