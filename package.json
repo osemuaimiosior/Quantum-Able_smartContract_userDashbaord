@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
+    "ethers": "5.7.2",
     "express": "^4.19.2",
     "node": "^20.13.1",
     "node-schedule": "^2.1.1",
