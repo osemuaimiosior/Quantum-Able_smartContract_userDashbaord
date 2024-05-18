@@ -17,7 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, '/public')));
-app.use('/registration', require('./routes/api/register'))
+app.use('/registration', require('./routes/api/register'));
+app.use('/eventFilter', require('./routes/api/eventLogsFilter'));
 
 app.get('^/$|/index(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
