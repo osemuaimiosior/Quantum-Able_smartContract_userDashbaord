@@ -10,7 +10,7 @@ const signer = wallet.provider.getSigner(wallet.address);
 const Contract = new ethers.Contract(addr, abi, provider);
   
 async function transferEvent() {  
-  Contract.on('transferEvent', (to, value, event) =>{
+  Contract.on("transferEvent", (to, value, event) =>{
     let info ={
       acc: to,
       value: ethers.utils.formatUnits(value),
@@ -21,7 +21,7 @@ async function transferEvent() {
 }
 
 async function thirdPartyTransferEvent() {  
-  Contract.on('thirdPartyTransferEvent', (to, value, event) =>{
+  Contract.on("thirdPartyTransferEvent", (to, value, event) =>{
     let info ={
       acc: to,
       value: ethers.utils.formatUnits(value),
@@ -32,7 +32,7 @@ async function thirdPartyTransferEvent() {
 }
 
 async function burnTokenEvent() {  
-  Contract.on('burnTokenEvent', (account, value, event) =>{
+  Contract.on("burnTokenEvent", (account, value, event) =>{
     let info ={
       acc: account,
       value: ethers.utils.formatUnits(value),

@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const registerController = require('../../controllers/etfRealTimeDataController');
+const etfRealTimeDataController = require('../../controllers/etfRealTimeDataController');
 
-router.route('/signUp')
-    .post(registerController.regNewUser);
+router.route('/dailyHistoric')
+    .get(etfRealTimeDataController);
 
-router.route('/logIn')
-    .post(registerController.logInUser);
+router.route('/weeklyHistoric')
+    .get(etfRealTimeDataController);
+
+router.route('/monthlyHistoric')
+    .get(etfRealTimeDataController);
 
 module.exports = router;
