@@ -7,4 +7,4 @@ const registrationSchema = new Schema({
     userPassword: {type: String, require: true}
 });
 
-module.exports = mongoose.model('reg', registrationSchema);
+module.exports = mongoose.model(registrationSchema, 'QuantumAble');
