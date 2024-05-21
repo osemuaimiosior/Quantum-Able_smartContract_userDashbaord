@@ -34,4 +34,7 @@ app.get('/login1(.html)?', (req, res) => {
 
 // schedule.scheduleJob('*/1 * * * *', () =>{ getData()});
 
-app.listen(PORT, () => {console.log(`Server is running on port ${PORT}`)});
+mongoose.connection.once('open', () => {
+    console.log("Connected to Mongodb");
+    app.listen(PORT, () => {console.log(`Server is running on port ${PORT}`)});
+});
