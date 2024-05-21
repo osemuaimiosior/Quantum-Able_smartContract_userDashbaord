@@ -36,17 +36,17 @@ const regNewUser = async (req, res) => {
 const logInUser = async (req, res) => {
     const { logEmail, logInPwd } = req.body;
     const userDetails = await model.findOne({userEmail: logEmail}).exec();
-try {const valideEmail = userDetails.userEmail;
+    
+try { const valideEmail = userDetails["userEmail"];
     if(!valideEmail) return res.sendStatus(409);
-    console.log(userDetails.userEmail);
-    console.log(userDetails.userPassword);
+    console.log(userDetails["userEmail"]);
+    console.log(userDetails["userPassword"]);
 
-    await bcrypt.compare(logInPwd, userDetails.userPassword)? res.sendStatus(200) : res.sendStatus(409);
+    await bcrypt.compare(logInPwd, userDetails["userPassword"])? res.sendStatus(200):  res.status(500).json({'message': "Bad request"});
 } catch (err) {
-    res.status(500).json({'message': err.message});
+    res.status(500).json({'message': err.message})
 }
-   
-}
+};
 
 module.exports = {
     regNewUser,
