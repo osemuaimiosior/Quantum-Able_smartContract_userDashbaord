@@ -32,7 +32,7 @@ app.get('/login1(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname, 'login1.html'));
 })
 
-// schedule.scheduleJob('*/1 * * * *', () =>{ getData()});
+ //schedule.scheduleJob('* * * * * *', () =>{ getData()});
 
 mongoose.connection.once('open', () => {
     console.log("Connected to Mongodb");
