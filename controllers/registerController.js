@@ -14,8 +14,9 @@ const regNewUser = async (req, res) => {
             userEmail: email,
             userPassword: hashedPwd
         });
+        const savedNewUser = newUser.save();
 
-        console.log(newUser);
+        console.log(savedNewUser);
         res.status(200).json(`Hello ${user} this is your email address: ${email} and Hashed password:${hashedPwd}`);
 
     } catch (error){

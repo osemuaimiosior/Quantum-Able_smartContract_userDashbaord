@@ -11,7 +11,7 @@ const options = {
       performanceIds: '0P00002DCS'
     },
     headers: {
-      'X-RapidAPI-Key': "0e0c397208msh18ef3e23db904bep1c3546jsn86e92cf3d761",
+      'X-RapidAPI-Key': process.env.X-RapidAPI-Key,
       'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com'
     }
   };
